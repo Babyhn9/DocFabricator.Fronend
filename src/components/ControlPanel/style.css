@@ -1,0 +1,33 @@
+.controll__{
+    display: flex;
+    height: 60px;
+}
+
+.controll__nav{
+    display: flex;
+    margin: 0 auto;
+}
+
+.controll__item{
+    display: table;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.controll__item a {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
+
+.controll__item a.active {
+    color: gray;
+    text-shadow: 2px 2px black;
+}
+.controll__item a:hover{
+    color: gray;
+    text-shadow: 2px 2px black;
+}
+.controll__item div {
+    display: table-cell;
+    vertical-align: middle  ;
+}

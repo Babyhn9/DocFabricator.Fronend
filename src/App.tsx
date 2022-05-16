@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useCallback } from 'react';
+import { setUser } from './redux/userSlice';
+import { useAppDispatch, useAppSelector } from './redux/store';
+import { LocalStorageKeys, User } from './utils/testData.';
+import { ControlPanel } from './components/ControlPanel/ControlPanel';
+import { Outlet } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+  const dispatch = useAppDispatch()
+  let selectedUser = useAppSelector(state=> state.userReducer.user)
+
+  const loadUserFromStorage = useCallback(() => {
+    const storedUser = localStorage.getItem(LocalStorageKeys.user)
+    if(storedUser != undefined) {
+      selectedUser = JSON.parse(storedUser) as User
+      if(selectedUser.token != '')
+        dispatch(setUser(selectedUser))
+    }
+  
+  }, [selectedUser])
+
+  if(selectedUser.token == '' )
+    loadUserFromStorage()
+
+  return <div className='App__'>
+        <ControlPanel/>
+        <Outlet/>
+  </div>
 }
+
 
 export default App;

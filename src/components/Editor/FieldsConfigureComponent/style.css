@@ -1,0 +1,38 @@
+.templateConfigurator__ { 
+
+}
+
+.templateConfigurator__body { 
+    margin-top: 20px;
+}
+
+.templateConfigurator__top { 
+    display: flex;
+}
+.templateConfigurator__bottom { 
+    display: flex;
+}
+.templateConfigurator__config__pair { 
+    display: flex;
+}
+ 
+.templateConfigurator__config__name { 
+    width: 100px;
+}
+
+.templateConfigurator__config__setter * { 
+    width: 300px;
+}
+
+.templateConfigurator__config {
+    width: 80%;
+}
+
+
+.templateConfigurator__fields {
+    width: 20%;
+}
+
+.templateConfigurator__fields * {
+    width: 100%;
+}

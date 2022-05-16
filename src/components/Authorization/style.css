@@ -1,0 +1,50 @@
+
+@import '../../Variables';
+
+.auth-container {
+    width: 400px;
+    height: 320px;
+    margin: 0 auto;
+}
+
+.auth-body {
+    margin-top: 200px;
+    border: solid black  2px;
+    border-radius: 13px;
+    background-color: rebeccapurple;
+
+}
+.auth-selection-mode {
+    padding-top: 20px; padding-bottom: 10px;
+    text-align: center;
+    border-bottom: solid black 2px ;
+}
+.auth-selection-mode button {
+    margin: 3px;
+    width: 150px;
+    height: 36px;
+    font-size: 16px;
+}
+
+.auth-enter {
+    padding: 10px; 
+    text-align: center;
+}
+
+.auth-enter input {
+    margin-top: 10px;
+    width: 300px;
+}
+
+.auth-enter button {
+    margin-top: 20px
+}
+
+.auth-text-type { 
+    font-size: 26px;
+}
+
+.auth-accept {
+   margin-top: 15px;
+}
+
