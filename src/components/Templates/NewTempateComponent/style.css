@@ -1,0 +1,43 @@
+.newTemplate {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+}
+
+.newTemplate-container {
+	background-color: var(--acent-color);
+	border: solid 2px var(--secondary-color);
+	border-radius: 25px;
+	width: 35%;
+	height: 45%;
+	margin-top: 5%;
+	margin-left: -11.25%;
+}
+
+.newTemplate-header {
+	text-align: center;
+	font-size: 32px;
+	height: 19%;
+}
+
+.newTemplate-fill {
+	margin: 0 auto;
+	width: 60%;
+	height: 60%;
+}
+
+.newTemplate-fill .row {
+	text-align: center;
+	
+}
+
+.newTemplate-submit{
+	display: flex;
+	vertical-align: bottom;
+	justify-content: center;
+}
+
+.newTemplate-submit button {
+	width: 35%;
+}

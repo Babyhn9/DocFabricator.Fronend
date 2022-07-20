@@ -1,0 +1,32 @@
+.templates__ {
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+
+.templates__nav {
+	width: 15%;
+	text-align: center;
+	background-color: var(--acent-color);
+	margin-right: 10px;
+
+}
+
+.templates__nav a {
+	display: block;
+	font-size: 20px;
+		color: white;
+}
+
+.templates__nav a.active {
+	color: gray;
+}
+.templates__nav .title {
+	padding-bottom: 5px;
+	border-bottom: solid 2px black;
+	margin-bottom: 20px;
+
+}
+.templates__component {
+	width: 100%;
+}

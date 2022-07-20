@@ -3,18 +3,15 @@ import { ChangeEvent, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { useService } from "../../../hooks/useService"
 import { useAppSelector } from "../../../redux/store"
-import { DocumentService } from "../../../services/Implementations/DocumentService"
-import { Guid, IBuildTemplateField, ITemplateFieldModel, TemplateModel } from "../../../services/Models/Types"
+import { Guid,  ITemplateFieldModel, TemplateModel } from "../../../services/Models/Types"
 
-
-export function FillTemplate () {
+export function TemplateFiller () {
     const id = useParams().id || "";
     const [template, setTemplate] = useState<TemplateModel>(new TemplateModel())
     const [fieldValues, setFieldsValues] = useState([''])
     const [downloadURL, setDownloadURL] = useState('')
     const [file, setFile] = useState<File>()
     const navigate = useNavigate()
-    const documentService = useService(DocumentService)
 
     const setField = (index:number, value:string) => {
         setFieldsValues(prev => {
@@ -27,12 +24,8 @@ export function FillTemplate () {
     const createChangeHandle = (index:number) => (e:ChangeEvent<HTMLInputElement>) => setField(index, e.target.value)
     
     const buildHandleClick = () => {
-        const builedFields = fieldValues.map((el, index)=> ({
-                value: el,
-                fieldId: template.fields[index].id
-        }) as IBuildTemplateField)
-
-        documentService.CreateDocument({
+      
+        /*documentService.CreateDocument({
             TemplateId: template.id,
             Fields: builedFields
         }).then(result => {
@@ -43,17 +36,17 @@ export function FillTemplate () {
             console.log(url)
             setDownloadURL(URL.createObjectURL(_file))
         }).catch(el => alert('error!!!!!'))
-
+			*/
     }  
 
     useEffect(()=>{
-            documentService.GetTemplate(id).then(result => setTemplate(result.template))
+          //  .GetTemplate(id).then(result => setTemplate(result.template))
     },[])
 
     return (
            <div>
                <div>
-                   {template.templateName}
+                   {template.name}
                </div>
 
                <div>

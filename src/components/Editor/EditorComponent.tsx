@@ -1,9 +1,10 @@
+import { NavLink, Route } from 'react-router-dom';
 import { RequireAuth } from '../Hocs/RequreAuth'
 import './style.css'
 function EditorComponent(){
     return (
         <div>
-            Outlock
+            Редактор
         </div>
     )
 }

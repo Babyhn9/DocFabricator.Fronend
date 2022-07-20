@@ -2,13 +2,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import { userReducer } from "./userSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { templateReducer } from "./templateSlice";
-import { fieldsConfiguratorReducer } from "./fieldsConfiguratorSlice";
 
 export const store = configureStore({
     reducer: {
         userReducer,
         templateReducer, 
-        fieldsConfiguratorReducer
     }
 });
 

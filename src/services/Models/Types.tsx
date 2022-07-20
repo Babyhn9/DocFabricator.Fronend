@@ -1,8 +1,9 @@
 export type Guid = string;
 
 export class TemplateModel {
-    templateName: string = ""
+    name: string = ""
     id: Guid = ""
+    description: string = ""
     fields: ITemplateFieldModel[] = new Array() 
 }
 
@@ -13,10 +14,11 @@ export interface ITemplateFieldModel {
     description: string
 }
 
-export interface IBuildTemplateField{
-    fieldId: Guid,
-    value: string
+export class NewTemplateFieldModel 
+{
+    value: string = ""
+    skipCount: number = 0
 }
-
+ 
 
 

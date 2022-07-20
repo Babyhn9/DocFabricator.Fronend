@@ -14,20 +14,24 @@ function App() {
   const loadUserFromStorage = useCallback(() => {
     const storedUser = localStorage.getItem(LocalStorageKeys.user)
     if(storedUser != undefined) {
-      selectedUser = JSON.parse(storedUser) as User
+      selectedUser = JSON.parse(storedUser) as User		
       if(selectedUser.token != '')
         dispatch(setUser(selectedUser))
     }
   
-  }, [selectedUser])
+  }, [selectedUser])		
 
   if(selectedUser.token == '' )
     loadUserFromStorage()
 
-  return <div className='App__'>
-        <ControlPanel/>
-        <Outlet/>
-  </div>
+	return(
+		<div className='App__'>
+			<div className="App__container">
+				<ControlPanel/>
+				<Outlet/>
+			</div>
+		</div>
+	) 
 }
 
 

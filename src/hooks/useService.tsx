@@ -1,7 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useAppSelector } from "../redux/store";
 import { IService } from "../services/service";
-import { INonTokenService } from "../services/Interfaces/INonTokenService"
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import { User } from "../utils/testData.";
@@ -20,7 +19,6 @@ export function useService<T extends IService>(c: new() => T) : T {
     } 
 
     var token = useAppSelector(state => state.userReducer.user.token)
-
     service.Token = token
 
     return service;

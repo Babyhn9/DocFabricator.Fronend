@@ -14,7 +14,7 @@ export class Service implements IService {
         const axClient = axios.create({
             baseURL: url, 
             headers: {
-                Token:this.Token
+                Token: this.Token
             },
         })
 
@@ -26,8 +26,8 @@ export class Service implements IService {
             .then(res => res.data))
     }
 
-    protected Get(url: string, request: any) {
-        return this.WhitLogOutError(this.CreateService().get(url, request)
+    protected Get(url: string) {
+        return this.WhitLogOutError(this.CreateService().get(url)
             .then(res => res.data));
     }
 

@@ -1,0 +1,49 @@
+@import '../../../Variables.css';
+
+:root{
+	--control-size: 150px;
+}	
+
+.change-template-container {
+	display: flex;
+	background-color: var(--acent-color);
+}
+
+.change-template-body {
+	padding-left: 20px;
+	width: 100%;
+}
+
+
+.change-template-slide {
+	display: flex;
+	width: 100%;
+}
+
+.change-template-flat{
+	width: 100%;
+}
+
+.change-template-flat p {
+	font-size: 18px;
+	margin: 0;
+}
+
+.change-template-controls {
+	border-left: 2px solid var(--secondary-color);
+	border-top: 2px solid var(--secondary-color);
+	padding-top: 10px;
+
+	width: var(--control-size);
+}
+
+.change-template-flat p{
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	line-height: 18px;
+}
+
+.temporal-fields {
+	
+}

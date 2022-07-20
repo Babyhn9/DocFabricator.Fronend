@@ -1,5 +1,6 @@
 import { TemplateModel } from "../Types";
 
 export interface GetTemplateResponce {
-    template: TemplateModel
+    template: TemplateModel,
+		flatText: string
 }

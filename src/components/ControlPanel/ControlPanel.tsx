@@ -1,56 +1,55 @@
-import { Button } from 'antd'
+	import { ReactElement } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Link, useNavigate } from 'react-router-dom'
-import { useAppDispatch } from '../../redux/store'
-import { setUser } from '../../redux/userSlice'
-import { Paths } from '../../utils/Pats'
-import { User } from '../../utils/testData.'
-import './style.css'
+import { JsxElement } from 'typescript'
+	import { useAppDispatch } from '../../redux/store'
+	import { setUser } from '../../redux/userSlice'
+	import { User } from '../../utils/testData.'
+	import './style.css'
 
 
-export function ControlPanel() {
-    
-    const navigate = useNavigate()
-    const dispatch = useAppDispatch()
+	export function ControlPanel() {
+		
+		const x = () => 5;
+		const dispatch = useAppDispatch()
 
-    const handleExitAction = () => {
-        dispatch(setUser(new User()))       
-        //navigate(Paths.authorize) 
-    }
-    return (
-        <div className='controll__'>
-            <nav className="controll__nav">
-                <div className="controll__item">
-                    <div>
-                        <NavLink to='/'>Главна</NavLink>
-                    </div>
-                </div>
-                <div className="controll__item">
-                    <div>
-                        <NavLink to ='/editor'>Редактор</NavLink>
-                    </div>
-                </div>
-                <div className="controll__item">
-                    <div>
-                        <NavLink to='/templates'>Мои шаблоны</NavLink>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    )
-}
+		const handleExitAction = () => {
+				dispatch(setUser(new User()))       
+				//navigate(Paths.authorize) 
+		}
+		return (
+				<div className='controll__'>
+						<nav className="controll__nav">
+							<ControlPanelItem to='/' label='Главная'/>
+							{
+							//	<ControlPanelItem to='/editor' label  = 'Редактор'/>
+							}
+							<ControlPanelItem to='/templates' label='Мои шаблоны'/>
+							<ControlPanelItem label='выход' clickAction={handleExitAction}/>
+						</nav>
+				</div>
+		)
+	}
 
-function Comment(){
-    /*
-    <div className='controll__item'>
-                    <Link  to={Paths.newTemplate}>Создать новый шаблон</Link>
-                </div>
+	type ControlPanelItemProps = {
+		label: string,
+		to?:string,
+		clickAction? : () => void
+	}
+	function ControlPanelItem({to, label, clickAction}: ControlPanelItemProps) {
+		let x: ReactElement;
 
-                <div className='controll__item'>
-                    <Link  to={Paths.allTemplates}>Список шаблонов</Link>
-                </div>
+		if(clickAction == null)
+			x = <NavLink to={to || ""}>{label}</NavLink>;
+		else
+			x = <button onClick={clickAction}>{label}</button>;
 
-                <div className='controll__item' >
-                    <Button type='primary' onClick={ handleExitAction } > Выйти </Button>
-                </div>*/
-}
+		return <div className="controll__item">
+			<div className="image">
+				
+			</div>
+
+			<div>
+				{x}
+			</div>
+		</div>
+	}

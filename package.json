@@ -5,6 +5,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@reduxjs/toolkit": "^1.7.1",
+    "@syncfusion/ej2-react-documenteditor": "^20.1.60",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -16,6 +17,7 @@
     "@types/react-router-dom": "^5.3.2",
     "antd": "^4.18.5",
     "axios": "^0.24.0",
+    "mammoth": "^1.4.21",
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
     "react-doc-viewer": "^0.1.5",
@@ -28,7 +30,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
